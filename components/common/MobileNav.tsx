@@ -2,8 +2,8 @@ import { Sheet, SheetTrigger, SheetContent } from "../ui/sheet"
 
 import {AlignJustify} from 'lucide-react'
 import Nav from "./Nav"
-import Logo from "../Logo"
-import Social from "../Social"
+import Logo from "./Logo"
+import Social from "./Social"
 
 const MobileNav = () => {
   return (

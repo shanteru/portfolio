@@ -1,4 +1,5 @@
 import About from "@/components/section/About";
+import CallToAction from "@/components/section/CallToAction";
 import Hero from "@/components/section/Hero";
 import RecentProject from "@/components/section/RecentProject";
 import Services from "@/components/section/Services";
@@ -9,8 +10,9 @@ export default function Home() {
    <main>
     <Hero/>
     <About/>
-    <Services/>
+    {/* <Services/> */}
     <RecentProject/>
+    <CallToAction/>
    </main>
   );
 }

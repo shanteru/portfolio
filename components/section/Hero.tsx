@@ -1,3 +1,4 @@
+'use client'
 import { Download, Send } from "lucide-react";
 
 import {
@@ -8,23 +9,41 @@ import {
   RiArrowDownSLine,
 } from "react-icons/ri";
 
-import DevImg from "@/components/DevImg";
-import Social from "@/components/Social";
+import DevImg from "@/components/common/DevImg";
+import Social from "@/components/common/Social";
 import Link from "@/node_modules/next/link";
 import { Button } from "../ui/button";
-import Floater from "../Floater";
+import Floater from "../common/Floater";
+
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
   return (
-    <section className="py-12 xl:py-24 h-[90vh] xl:pt-28 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none">
+    <section className="py-12 xl:py-24 h-[95vh] xl:pt-28 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           {/* text */}
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left">
             <div className="text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]">
-              Software Engineer
+              Chantelle Loh Yi Wei
             </div>
-            <h1 className="h1">Hello, my name is Chantelle Loh</h1>
+            <h1 className="h1 md:h3 "><TypeAnimation
+              sequence={[
+
+
+                "Hello, I've develop Web App",
+                1000,
+                "Hello, I've done AI Research",
+                1000,
+                "Hello, I've done UI/UX Design",
+                1000
+
+              ]}
+              
+              speed={30}
+
+              repeat={Infinity}
+            /></h1>
             <br />
             <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
               Experience in conducting AI research, integrating AI in web
@@ -66,15 +85,15 @@ const Hero = () => {
               icon={<RiAwardFill />}
               endCountNum={10}
               floaterText="Award & Recognitions"
-              
+
             />
-             {/* float3  */}
-             <Floater
+            {/* float3  */}
+            <Floater
               containerStyles="absolute top-[57%] -right-8"
               icon={<RiBriefcase4Fill />}
               endCountNum={21}
               floaterText="Months of Experience"
-              
+
             />
             <div className="bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px]  h-[500px] bg-no-repeat absolute -top-1 -right-2  "></div>
             <DevImg
@@ -85,7 +104,7 @@ const Hero = () => {
         </div>
 
         {/* icons */}
-        <div className="hidden lg:flex absolute left-1/2 bottom-8 xl:bottom-12 animate-bounce">
+        <div className="hidden xl:flex left-2/4 absolute bottom-8 xl:bottom-12 animate-bounce">
           <RiArrowDownSLine className="text-3xl text-primary" />
         </div>
       </div>

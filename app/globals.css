@@ -46,7 +46,7 @@
     --destructive-foreground: 210 20% 98%;
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
-    --ring: 263.4 70% 50.4%;
+    --ring: 215 27.9% 10.9%;
   }
 }
 
@@ -87,4 +87,13 @@
 
 .floater {
   @apply z-10 w-[200px] h-[68px] bg-[#F7F1FD] dark:backdrop-blur-[80px] shadow-2xl p-4 rounded-[18px] flex items-center gap-x-2;
+}
+
+
+/* swiper bullets style */
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+.swiper-pagination-bullet{
+  @apply bg-primary
 }

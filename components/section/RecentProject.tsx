@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 //components
-import ProjectCard from "../Project/ProjectCard";
+import ProjectCard from "../common/ProjectCard";
 
 const projectData = [
   {
@@ -60,7 +60,7 @@ const projectData = [
 ];
 const RecentProject = () => {
   return (
-    <section className="relative mb-12 xl:mb-48">
+    <section className="relative mt-12 mb-12 xl:mb-48">
       <div className="container mx-auto">
         {/* text  */}
         <div

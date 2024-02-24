@@ -1,4 +1,4 @@
-import DevImg from "../DevImg";
+import DevImg from "../common/DevImg";
 import Image from "@/node_modules/next/image";
 
 import {
@@ -17,27 +17,10 @@ const infoData = [
     icon: <User2 size={20} />,
     text: "Chantelle Loh Yi Wei",
   },
-  {
-    icon: <PhoneCall size={20} />,
-    text: "012 428 9896",
-  },
+
   {
     icon: <MailIcon size={20} />,
     text: "chantelle.lyw@gmail.com",
-  },
-
-  {
-    icon: <GraduationCap size={20} />,
-    text: "Bachelor of Computer Science",
-  },
-
-  {
-    icon: <HomeIcon size={20} />,
-    text: "Penang (MY)",
-  },
-  {
-    icon: <Briefcase size={20} />,
-    text: "Singapore",
   },
 ];
 
@@ -116,7 +99,7 @@ const About = () => {
     return arr.find((item) => item.title === title);
   };
   return (
-    <section className="xl:h-[860px] pb-12 xl:py-24">
+    <section className="xl:h-[100vh] pb-12 xl:py-24">
       <div className="container mx-auto">
         <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
           About me
@@ -135,7 +118,7 @@ const About = () => {
           <div className="flex-1">
             <Tabs defaultValue="personal">
               <TabsList className="w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none">
-                <TabsTrigger className="w-[162px] xl:w-auto" value="personal">
+                <TabsTrigger className="w -[162px]xl:w-auto" value="personal">
                   Personal Info
                 </TabsTrigger>
                 <TabsTrigger
@@ -161,9 +144,8 @@ const About = () => {
                       my academic journey through a final year project and
                       honors thesis research in AI ignited a passion for
                       bridging the gap between theoretical models and their
-                      practical applications. This drives my eagerness to 
-                      make a real difference through
-                      practical AI solutions. 
+                      practical applications. This drives my eagerness to make a
+                      real difference through practical AI solutions.
                     </p>
                     {/* icons */}
                     <div className="grid xl:grid-cols-2 gap-4 mb-12">
@@ -281,7 +263,9 @@ const About = () => {
                 {/* skills */}
                 <TabsContent value="skills">
                   <div className="text-center xl:text-left">
-                    <h3 className="h3 mb-8">My Daily Tools</h3>
+                    <h3 className="h3 mb-8">
+                      Familiar Tools, Language & Frameworks
+                    </h3>
                     <div className="mb-16">
                       <h4 className="text-xl font-semibold mb-2">Skills</h4>
                       <div className="border-b border-border mb-4"></div>
