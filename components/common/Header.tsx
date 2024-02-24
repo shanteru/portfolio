@@ -11,14 +11,16 @@ const Header = () => {
   const[ header, setHeader] = useState(false);
   const pathname = usePathname();
 
-  useEffect(()=>{
-    const scrollYPos = window.addEventListener('scroll', ()=>{
-      window.scrollY > 50 ? setHeader(true):setHeader(false);
 
-    });
+  const handleScroll = () => {
+    window.scrollY > 50 ? setHeader(true):setHeader(false)
+  };
+
+  useEffect(()=>{
+    window.addEventListener('scroll', handleScroll);
 
     //remove the event
-    return ()=> window.removeEventListener('scroll', scrollYPos);
+    return ()=> window.removeEventListener('scroll', handleScroll);
   })
 
   return (

@@ -4,7 +4,21 @@ import { Card, CardHeader } from "../ui/card";
 import { Github, Link2Icon } from "lucide-react";
 import { Badge } from "../ui/badge";
 
-const ProjectCard = ({ project }) => {
+
+type Project = {
+  image: string;
+  category: string;
+  name: string;
+  description: string;
+  link: string;
+  github: string;
+};
+
+type ProjectCardProps = {
+  project: Project;
+};
+
+const  ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Card className="group relative overflow-hidden ">
       <CardHeader className="p-0">

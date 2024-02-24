@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import {motion} from 'framer-motion';
 import useScrollProgress from '@/hooks/useScrollProgress';
@@ -8,8 +8,12 @@ const variants ={
     hidden: {opacity: 0},
     enter: {opacity: 1}
 }
+type TemplateProps = {
+    children: ReactNode; // This is the type for children
+  };
 
-const Template = ({children}) => {
+  
+const Template = ({children}:TemplateProps) => {
 
     const completion = useScrollProgress();
     return <>

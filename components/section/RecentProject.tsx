@@ -15,8 +15,16 @@ import { Pagination } from "swiper/modules";
 
 //components
 import ProjectCard from "../common/ProjectCard";
+type Project = {
+  image: string;
+  category: string;
+  name: string;
+  description: string;
+  link: string;
+  github: string;
+};
 
-const projectData = [
+const projectData : Project[]= [
   {
     image: "/work/3.png",
     category: "react js",
@@ -58,6 +66,8 @@ const projectData = [
     github: "/",
   },
 ];
+
+
 const RecentProject = () => {
   return (
     <section className="relative mt-12 mb-12 xl:mb-48">
@@ -77,7 +87,7 @@ const RecentProject = () => {
         {/* slider */}
 
         <div className="xl:max-w-[1000px] xl:absolute right-0 top-0">
-          <Swiper className="h-[480px] " slidesperView={1} breakpoints={{
+          <Swiper className="h-[480px] " slidesPerView={1} breakpoints={{
             640:{
               slidesPerView:2
             },

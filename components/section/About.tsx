@@ -12,19 +12,48 @@ import {
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
-const infoData = [
+
+interface InfoItem {
+  icon: JSX.Element;
+  text: string;
+}
+
+interface QualificationItem {
+  university?: string;
+  qualification?: string;
+  years: string;
+  company?: string;
+  role?: string;
+}
+
+interface QualificationData {
+  title: string;
+  data: QualificationItem[];
+}
+
+interface SkillItem {
+  name?: string;
+  imgPath?: string;
+}
+
+interface SkillData {
+  title: string;
+  data: SkillItem[];
+}
+
+
+const infoData: InfoItem[] = [
   {
     icon: <User2 size={20} />,
-    text: "Chantelle Loh Yi Wei",
+    text: 'Chantelle Loh Yi Wei',
   },
-
   {
     icon: <MailIcon size={20} />,
-    text: "chantelle.lyw@gmail.com",
+    text: 'chantelle.lyw@gmail.com',
   },
 ];
 
-const qualificationData = [
+const qualificationData: QualificationData[] = [
   {
     title: "education",
     data: [
@@ -63,7 +92,7 @@ const qualificationData = [
   },
 ];
 
-const skillData = [
+const skillData: SkillData[] = [
   {
     title: "skills",
     data: [
@@ -94,9 +123,9 @@ const skillData = [
   },
 ];
 
-const About = () => {
-  const getData = (arr, title) => {
-    return arr.find((item) => item.title === title);
+const About : React.FC = () => {
+  const getData = <T, >(arr: T[], title: string): T | undefined => {
+    return arr.find((item: any) => item.title === title);
   };
   return (
     <section className="xl:h-[100vh] pb-12 xl:py-24">
@@ -185,12 +214,13 @@ const About = () => {
                         <div className="flex gap-x-4 items-center text-[22px] text-primary">
                           <Briefcase />
                           <h4 className="capitalize font-medium">
-                            {getData(qualificationData, "experience").title}
+                            
+                            {getData(qualificationData, "experience")?.title}
                           </h4>
                         </div>
                         {/* exp-list  */}
                         <div className="flex flex-col gap-y-8">
-                          {getData(qualificationData, "experience").data.map(
+                          {getData(qualificationData, "experience")?.data.map(
                             (item, index) => {
                               const { company, role, years } = item;
                               return (
@@ -223,12 +253,12 @@ const About = () => {
                         <div className="flex gap-x-4 items-center text-[22px] text-primary">
                           <GraduationCap size={28} />
                           <h4 className="capitalize font-medium">
-                            {getData(qualificationData, "education").title}
+                            {getData(qualificationData, "education")?.title}
                           </h4>
                         </div>
                         {/* education-list  */}
                         <div className="flex flex-col gap-y-8">
-                          {getData(qualificationData, "education").data.map(
+                          {getData(qualificationData, "education")?.data.map(
                             (item, index) => {
                               const { university, qualification, years } = item;
                               return (
@@ -271,7 +301,7 @@ const About = () => {
                       <div className="border-b border-border mb-4"></div>
                       {/* skill list */}
                       <div>
-                        {getData(skillData, "skills").data.map(
+                        {getData(skillData, "skills")?.data.map(
                           (item, index) => {
                             const { name } = item;
                             return (
@@ -293,12 +323,12 @@ const About = () => {
                       </h4>
                       <div className="border-b border-border mb-4"></div>
                       <div className="flex gop-x-8 justify-center xl:justify-start">
-                        {getData(skillData, "tools").data.map((item, index) => {
+                        {getData(skillData, "tools")?.data.map((item, index) => {
                           const { imgPath } = item;
                           return (
                             <div key={index}>
                               <Image
-                                src={imgPath}
+                                src={imgPath as string}
                                 width={48}
                                 height={48}
                                 alt=""

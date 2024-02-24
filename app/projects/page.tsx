@@ -48,7 +48,7 @@ const projectData = [
 
 
 // remove duplicates 
-const uniqueCategories = ['all projects', ...new Set(projectData.map((item) => item.category))]
+const uniqueCategories = ['all projects', ...Array.from(new Set(projectData.map((item) => item.category)))]
 const Projects = () => {
 
   const [categories, setCategories] = useState(uniqueCategories);
